@@ -3,8 +3,8 @@
         'instructor_ids',
         (($course ?? null)?->getKey())
             ? $course->instructors->pluck('id')->all()
-            : [],
-    ),
+            : []
+    )
 )
 <div class="form-group">
     <label>Title</label>
