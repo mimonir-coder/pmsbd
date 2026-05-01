@@ -1,0 +1,26 @@
+# Local / IDE
+.idea/
+.vscode/
+*.swp
+Thumbs.db
+.DS_Store
+
+# Web root symlink (generated on server/local)
+/public/storage/
+
+# Laravel app (subdir)
+/laravel/vendor/
+/laravel/node_modules/
+/laravel/.env
+/laravel/.env.*
+/laravel/npm-debug.log
+/laravel/yarn-error.log
+
+# Front theme deps (committed dist assets; reinstall with npm ci in public/front when needed)
+/public/front/node_modules/
+
+# Uploaded / generated caches (respect laravel/storage inner .gitignore)
+/laravel/storage/*.key
+
+# Database dumps (credentials + live data — do not publish)
+*.sql

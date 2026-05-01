@@ -1,0 +1,28 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class ValuedClient extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'logo',
+        'sort_order',
+        'is_active',
+    ];
+
+    protected $casts = [
+        'is_active' => 'boolean',
+        'sort_order' => 'integer',
+    ];
+
+    public function logoUrl(): ?string
+    {
+        return $this->logo ? asset('storage/'.$this->logo) : null;
+    }
+}
