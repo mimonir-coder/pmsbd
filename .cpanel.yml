@@ -6,4 +6,3 @@ deployment:
     - /bin/rsync -a --delete --exclude '.well-known' --exclude 'storage' public/ $DEPLOYPATH
     - export DEPLOYPATH=/home/pmsbdcom/laravel/
     - /bin/rsync -a --delete --exclude 'vendor' --exclude 'node_modules' laravel/ $DEPLOYPATH
-    - cd /home/pmsbdcom/laravel && /opt/cpanel/composer/bin/composer install --no-dev --no-interaction
