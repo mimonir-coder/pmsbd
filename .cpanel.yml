@@ -1,7 +1,7 @@
 ---
 deployment:
   tasks:
-    - /bin/mkdir -p /home/$(whoami)/public_html /home/$(whoami)/laravel
-    - /bin/rsync -a --delete --exclude 'vendor' --exclude 'node_modules' laravel/ /home/$(whoami)/laravel/
-    - /bin/rsync -a --delete --exclude '.well-known' --exclude 'storage' public/ /home/$(whoami)/public_html/
-    - cd /home/$(whoami)/laravel && (/opt/cpanel/composer/bin/composer install --no-dev --no-interaction || composer install --no-dev --no-interaction)
+    - /bin/mkdir -p /home/pmsbdcom/public_html /home/pmsbdcom/laravel
+    - /bin/rsync -a --delete --exclude 'vendor' --exclude 'node_modules' laravel/ /home/pmsbdcom/laravel/
+    - /bin/rsync -a --delete --exclude '.well-known' --exclude 'storage' public/ /home/pmsbdcom/public_html/
+    - cd /home/pmsbdcom/laravel && (/opt/cpanel/composer/bin/composer install --no-dev --no-interaction || composer install --no-dev --no-interaction)
