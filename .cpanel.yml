@@ -3,6 +3,6 @@ deployment:
   tasks:
     - /bin/mkdir -p /home/pmsbdcom/public_html /home/pmsbdcom/laravel
     - export DEPLOYPATH=/home/pmsbdcom/public_html/
-    - /bin/rsync -a --delete --exclude '.well-known' --exclude 'storage' public/ $DEPLOYPATH
+    - /bin/cp -a public/. $DEPLOYPATH
     - export DEPLOYPATH=/home/pmsbdcom/laravel/
-    - /bin/rsync -a --delete --exclude 'vendor' --exclude 'node_modules' laravel/ $DEPLOYPATH
+    - /bin/cp -a laravel/. $DEPLOYPATH
