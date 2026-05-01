@@ -1,7 +1,4 @@
 ---
-# cPanel Git™ deployment — runs when you deploy from cPanel (see docs below).
-# Matches this repo layout: public/ → public_html, laravel/ → sibling ../laravel (see public/index.php).
-# whoami = your cPanel account user when the hook runs.
 deployment:
   tasks:
     - /bin/mkdir -p /home/$(whoami)/public_html /home/$(whoami)/laravel
