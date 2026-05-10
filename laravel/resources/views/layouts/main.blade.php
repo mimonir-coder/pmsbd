@@ -16,7 +16,7 @@
     <meta name="topic" content="" />
     <meta name="summary" content="" />
     <meta name="Classification" content="" />
-    <meta name="author" content="Md Khalid Hossain" />
+    <meta name="author" content="Mamun Rahm, mamun.rahm@gmail.com" />
     <meta name="og:title" content="@yield('title')" />
     <meta name="og:type" content="" />
     <meta name="og:url" content="" />

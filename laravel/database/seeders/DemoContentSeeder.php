@@ -40,9 +40,9 @@ class DemoContentSeeder extends Seeder
         };
 
         $i1 = Instructor::query()->create([
-            'name' => 'Khalid Hossain',
+            'name' => 'Karim Hassan',
             'designation' => 'Lead Trainer, PMP',
-            'image' => $copyToStorage('demo/instructors/khalid.png'),
+            'image' => $copyToStorage('demo/instructors/lead-instructor.png'),
             'qualifications' => 'PMP, PMI-ACP, 15+ years in development sector PM.',
             'bio' => '<p>Specialises in practical project management for NGOs and multilateral programmes.</p><ul><li>PMI Authorized Training Partner facilitator</li><li>Former PMO lead for large national portfolios</li></ul>',
             'sort_order' => 1,

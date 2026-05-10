@@ -48,7 +48,7 @@ require __DIR__.'/auth.php';
 
 Route::get('/kadmin-user/dashboard', function () {
     return view('admins.dashboard');
-})->middleware(['auth:admin', 'verified'])->name('admin.dashboard');
+})->middleware(['auth:admin'])->name('admin.dashboard');
 
 
 require __DIR__.'/adminauth.php';

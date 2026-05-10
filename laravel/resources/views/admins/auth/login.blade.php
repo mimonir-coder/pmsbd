@@ -59,14 +59,14 @@
     <meta name="description" content=""/>
     <!-- VENDOR CSS -->
     <meta name='subject' content=''>
-    <meta name="copyright" content="Future Linc" />
+    <meta name="copyright" content="PMS BD" />
     <meta name="language" content="EN" />
     <meta name="abstract" content="" />
     <meta name="topic" content="" />
     <meta name="summary" content="" />
     <meta name="Classification" content="" />
-    <meta name="author" content="Md Khalid Hossain, infoarksit@gmail.com" />
-    <meta name="og:title" content="Future Linc" />
+    <meta name="author" content="Mamun Rahm, mamun.rahm@gmail.com" />
+    <meta name="og:title" content="PMS BD" />
     <meta name="og:type" content="Study abroad, International Student" />
     <meta name="og:url" content="" />
     <meta name="og:image" content="" />
@@ -92,14 +92,14 @@
                     <div class="card-body">
                         <div class="row mb-5">
                             <div class="col-12">                                
-                                <a href="http://arksit.com" target="_blank">
+                                <a href="https://pmsbd.com" target="_blank" rel="noopener noreferrer">
                                     <img class="img-fluid d-block mx-auto mb-4" src="{{ asset('front/dist/images/Pms.png') }}" alt="PMS BD" style="height: 80px;">
                                 </a>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-12 pb-4">
-                                <p class="text-center">User name: kadmin@gmail.com Password: password</p>
+                                {{-- Demo hint removed — use your DB credentials --}}
                             </div>
                         </div>
                         <form method="POST" action="{{ route('admin.login') }}">
