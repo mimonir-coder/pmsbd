@@ -1,97 +1,23 @@
 <aside class="menu-sidebar d-none d-lg-block">
     <div class="logo">
-        <a href="#">
-            <img src="{{ asset('main/images/icon/logo.png') }}" alt="Cool Admin" />
+        <a href="{{ route('home') }}">
+            <img src="{{ asset('front/dist/images/Pms.png') }}" alt="PMS BD" style="max-height: 60px;" />
         </a>
     </div>
     <div class="menu-sidebar__content js-scrollbar1">
         <nav class="navbar-sidebar">
             <ul class="list-unstyled navbar__list">
-                <li class="active has-sub">
-                    <a class="js-arrow" href="#">
+                <li class="{{ request()->routeIs('dashboard') ? 'active' : '' }}">
+                    <a href="{{ route('dashboard') }}">
                         <i class="fas fa-tachometer-alt"></i>Dashboard</a>
-                    <ul class="list-unstyled navbar__sub-list js-sub-list">
-                        <li>
-                            <a href="#">Dashboard </a>
-                        </li>
-
-                    </ul>
                 </li>
                 <li>
-                    <a href="#">
-                        <i class="fas fa-chart-bar"></i>Charts
-                    </a>
+                    <a href="{{ route('courses') }}">
+                        <i class="fas fa-book"></i>Browse Courses</a>
                 </li>
-                <li>
-                    <a href="#">
-                        <i class="fas fa-table"></i>Tables</a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="far fa-check-square"></i>Forms</a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fas fa-calendar-alt"></i>Calendar</a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fas fa-map-marker-alt"></i>Maps
-                    </a>
-                </li>
-                <li class="has-sub">
-                    <a class="js-arrow" href="#">
-                        <i class="fas fa-copy"></i>Pages</a>
-                    <ul class="list-unstyled navbar__sub-list js-sub-list">
-                        <li>
-                            <a href="#">Login</a>
-                        </li>
-                        <li>
-                            <a href="#">Register</a>
-                        </li>
-                        <li>
-                            <a href="#">Forget Password</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="has-sub">
-                    <a class="js-arrow" href="#">
-                        <i class="fas fa-desktop"></i>UI Elements</a>
-                    <ul class="list-unstyled navbar__sub-list js-sub-list">
-                        <li>
-                            <a href="#">Button</a>
-                        </li>
-                        <li>
-                            <a href="#">Badges</a>
-                        </li>
-                        <li>
-                            <a href="#">Tabs</a>
-                        </li>
-                        <li>
-                            <a href="#">Cards</a>
-                        </li>
-                        <li>
-                            <a href="#">Alerts</a>
-                        </li>
-                        <li>
-                            <a href="#">Progress Bars</a>
-                        </li>
-                        <li>
-                            <a href="#">Modals</a>
-                        </li>
-                        <li>
-                            <a href="#">Switchs</a>
-                        </li>
-                        <li>
-                            <a href="#">Grids</a>
-                        </li>
-                        <li>
-                            <a href="#">Fontawesome Icon</a>
-                        </li>
-                        <li>
-                            <a href="#">Typography</a>
-                        </li>
-                    </ul>
+                <li class="{{ request()->routeIs('profile.edit') ? 'active' : '' }}">
+                    <a href="{{ route('profile.edit') }}">
+                        <i class="fas fa-user"></i>My Profile</a>
                 </li>
             </ul>
         </nav>

@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\MainController;
+use App\Models\Course;
 
 
 /*
@@ -34,7 +35,14 @@ Route::get('/courses/{course:slug}', [MainController::class, 'courseDetail'])->n
 Route::get('/blogs', [MainController::class, 'blog'])->name('blog');
 
 Route::get('/dashboard', function () {
-    return view('users.dashboard');
+    $courses = Course::query()
+        ->where('is_active', true)
+        ->orderBy('sort_order')
+        ->orderByDesc('updated_at')
+        ->limit(6)
+        ->get();
+
+    return view('users.dashboard', compact('courses'));
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
