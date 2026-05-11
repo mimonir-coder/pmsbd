@@ -51,6 +51,7 @@ Route::middleware('auth:admin')->group(function () {
 
     Route::post('admin/confirm-password', [ConfirmablePasswordController::class, 'store']);
 
+    Route::get('kadmin-user/change-password', [PasswordController::class, 'edit'])->name('admin.password.edit');
     Route::put('admin/password', [PasswordController::class, 'update'])->name('admin.password.update');
 
     Route::post('admin/logout', [AuthenticatedSessionController::class, 'destroy'])

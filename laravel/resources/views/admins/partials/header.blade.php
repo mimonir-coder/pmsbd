@@ -98,7 +98,7 @@
 						<div class="dropdown-menu dropdown-menu-right profile-notification">
 							<div class="pro-head">
 								<img src="{{ asset('assets/images/user/avatar-2.jpg') }}" class="img-radius" alt="User-Profile-Image">
-								<span>{{ Auth::user()->name }}</span>
+								<span>{{ Auth::guard('admin')->user()->name }}</span>
 								{{-- <a href="#" class="dud-logout" title="Logout">
 									<i class="feather icon-log-out"></i>
 								</a> --}}
@@ -113,9 +113,13 @@
                                 </form>
 							</div>
 							<ul class="pro-body">
-								<li><a href="#" class="dropdown-item"><i class="feather icon-user"></i> Profile</a></li>
-								<li><a href="#" class="dropdown-item"><i class="feather icon-mail"></i> My Messages</a></li>
-								<li><a href="#" class="dropdown-item"><i class="feather icon-lock"></i> Lock Screen</a></li>
+								<li><a href="{{ route('admin.password.edit') }}" class="dropdown-item"><i class="feather icon-lock"></i> Change Password</a></li>
+								<li>
+									<a href="{{ route('admin.logout') }}" class="dropdown-item"
+									   onclick="event.preventDefault(); document.getElementById('admin-logout-form').submit();">
+										<i class="feather icon-log-out"></i> Logout
+									</a>
+								</li>
 							</ul>
 						</div>
 					</div>
