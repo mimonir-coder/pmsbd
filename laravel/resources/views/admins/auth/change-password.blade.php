@@ -11,11 +11,20 @@
                 <div class="card-body">
                     @include('admins.partials.alerts')
 
-                    <p class="text-muted">
+                    @php $admin = Auth::guard('admin')->user(); @endphp
+
+                    <p class="text-muted mb-1">
                         Logged in as
-                        <strong>{{ Auth::guard('admin')->user()->name }}</strong>
-                        ({{ Auth::guard('admin')->user()->email }})
+                        <strong>{{ $admin->name }}</strong>
+                        ({{ $admin->email }})
                     </p>
+                    @if ($admin->updated_at)
+                        <p class="text-muted small mb-3">
+                            <i class="feather icon-clock m-r-5"></i>
+                            Last account update: {{ $admin->updated_at->format('d M Y, h:i A') }}
+                            ({{ $admin->updated_at->diffForHumans() }})
+                        </p>
+                    @endif
 
                     <form method="POST" action="{{ route('admin.password.update') }}" autocomplete="off">
                         @csrf
