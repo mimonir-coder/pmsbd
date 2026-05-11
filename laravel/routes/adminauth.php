@@ -17,21 +17,21 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest:admin')->group(function () {
 
-    Route::get('/arks-kadmin/login', [AuthenticatedSessionController::class, 'create'])
+    Route::get('/pmsbd/login', [AuthenticatedSessionController::class, 'create'])
         ->name('admin.login');
 
-    Route::post('/arks-kadmin/login', [AuthenticatedSessionController::class, 'store'])->name('admin.login');
+    Route::post('/pmsbd/login', [AuthenticatedSessionController::class, 'store'])->name('admin.login');
 
-    Route::get('arks-kadmin/forgot-password', [PasswordResetLinkController::class, 'create'])
+    Route::get('pmsbd/forgot-password', [PasswordResetLinkController::class, 'create'])
         ->name('admin.password.request');
 
-    Route::post('admin/forgot-password', [PasswordResetLinkController::class, 'store'])
+    Route::post('pmsbd/forgot-password', [PasswordResetLinkController::class, 'store'])
         ->name('admin.password.email');
 
-    Route::get('arks-kadmin/reset-password/{token}', [NewPasswordController::class, 'create'])
+    Route::get('pmsbd/reset-password/{token}', [NewPasswordController::class, 'create'])
         ->name('admin.password.reset');
 
-    Route::post('admin/reset-password', [NewPasswordController::class, 'store'])
+    Route::post('pmsbd/reset-password', [NewPasswordController::class, 'store'])
         ->name('admin.password.store');
 });
 
