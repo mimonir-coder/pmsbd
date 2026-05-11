@@ -97,7 +97,7 @@
 						</a>
 						<div class="dropdown-menu dropdown-menu-right profile-notification">
 							<div class="pro-head">
-								<img src="{{ asset('assets/images/user/avatar-2.jpg') }}" class="img-radius" alt="User-Profile-Image">
+								<img src="{{ filled(Auth::guard('admin')->user()->image) ? asset('storage/'.Auth::guard('admin')->user()->image) : asset('assets/images/user/avatar-2.jpg') }}" class="img-radius" alt="User-Profile-Image">
 								<span>{{ Auth::guard('admin')->user()->name }}</span>
 								{{-- <a href="#" class="dud-logout" title="Logout">
 									<i class="feather icon-log-out"></i>
@@ -113,6 +113,7 @@
                                 </form>
 							</div>
 							<ul class="pro-body">
+								<li><a href="{{ route('admin.profile.edit') }}" class="dropdown-item"><i class="feather icon-user"></i> My Profile</a></li>
 								<li><a href="{{ route('admin.password.edit') }}" class="dropdown-item"><i class="feather icon-lock"></i> Change Password</a></li>
 								<li>
 									<a href="{{ route('admin.logout') }}" class="dropdown-item"

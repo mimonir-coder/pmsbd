@@ -5,7 +5,7 @@
 				
 				<div class="">
 					<div class="main-menu-header">
-						<img class="img-radius" src="{{ asset('assets/images/user/avatar-2.jpg') }}" alt="User-Profile-Image">
+						<img class="img-radius" src="{{ filled(Auth::guard('admin')->user()->image) ? asset('storage/'.Auth::guard('admin')->user()->image) : asset('assets/images/user/avatar-2.jpg') }}" alt="User-Profile-Image">
 						<div class="user-details">
 							<span>{{ Auth::guard('admin')->user()->name }}</span>
 							{{-- <div id="more-details">UX Designer<i class="fa fa-chevron-down m-l-5"></i></div> --}}
@@ -39,8 +39,8 @@
 					<li class="nav-item pcoded-hasmenu">
 					    <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-layout"></i></span><span class="pcoded-mtext">Admin User Setup</span></a>
 					    <ul class="pcoded-submenu">
-					        <li><a href="#">Sliders</a></li>
-					        <li><a href="#">Horizontal</a></li>
+					        <li><a href="{{ route('admin.admin-users.index') }}">Admin users</a></li>
+					        <li><a href="{{ route('admin.profile.edit') }}">My profile</a></li>
 					    </ul>
 					</li>
 					<li class="nav-item pcoded-hasmenu">

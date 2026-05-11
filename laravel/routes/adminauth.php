@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admins\CourseController;
+use App\Http\Controllers\Admins\AdminUserController;
 use App\Http\Controllers\Admins\InstructorController;
 use App\Http\Controllers\Admins\TestimonialController;
 use App\Http\Controllers\Admins\ValuedClientController;
@@ -53,11 +54,14 @@ Route::middleware('auth:admin')->group(function () {
 
     Route::get('kadmin-user/change-password', [PasswordController::class, 'edit'])->name('admin.password.edit');
     Route::put('admin/password', [PasswordController::class, 'update'])->name('admin.password.update');
+    Route::get('kadmin-user/profile', [AdminUserController::class, 'editProfile'])->name('admin.profile.edit');
+    Route::put('kadmin-user/profile', [AdminUserController::class, 'updateProfile'])->name('admin.profile.update');
 
     Route::post('admin/logout', [AuthenticatedSessionController::class, 'destroy'])
         ->name('admin.logout');
 
     Route::prefix('kadmin-user')->name('admin.')->group(function () {
+        Route::resource('admin-users', AdminUserController::class)->except(['show']);
         Route::resource('instructors', InstructorController::class)->except(['show']);
         Route::resource('courses', CourseController::class)->except(['show']);
         Route::resource('testimonials', TestimonialController::class)->except(['show']);

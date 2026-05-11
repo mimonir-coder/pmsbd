@@ -1,0 +1,4 @@
+Run this SQL once in cPanel phpMyAdmin before using admin photo upload:
+
+ALTER TABLE `admins`
+  ADD COLUMN `image` varchar(255) NULL AFTER `mobile`;
