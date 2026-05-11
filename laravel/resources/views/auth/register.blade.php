@@ -107,7 +107,7 @@
                                     <label for="l_name" class="mfw-5 col-md-12 col-form-label text-md-left">{{ __('Last Name') }}</label>
 
                                     <div class="col-md-12">
-                                        <input id="l_name" type="text" class="mfw-4 form-control @error('name') is-invalid @enderror" name="l_name" value="{{ old('l_name') }}" required autocomplete="l_name" autofocus>
+                                        <input id="l_name" type="text" class="mfw-4 form-control @error('l_name') is-invalid @enderror" name="l_name" value="{{ old('l_name') }}" required autocomplete="family-name">
 
                                         @error('l_name')
                                             <span class="invalid-feedback" role="alert">
@@ -168,8 +168,13 @@
                       </div>
 
                       <div class="custom-control custom-checkbox my-4">
-                        <input type="checkbox" class="custom-control-input" id="terms" name="terms" required="required">
+                        <input type="checkbox" class="custom-control-input @error('terms') is-invalid @enderror" id="terms" name="terms" value="1" required="required">
                         <label class="mfw-5 custom-control-label" for="terms">Agree <a href="#" target="_blank">Terms of service</a></label>
+                        @error('terms')
+                            <span class="invalid-feedback d-block" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                       </div>
 
                       <button class="btn btn-info my-4 btn-block mfw-4" type="submit">Register</button> 
